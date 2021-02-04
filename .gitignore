@@ -1,0 +1,12 @@
+# Project exclude paths
+/target/
+.gitignore
+.idea/.gitignore
+.idea/compiler.xml
+.idea/encodings.xml
+.idea/jarRepositories.xml
+.idea/misc.xml
+.idea/uiDesigner.xml
+pom.xml
+spring-calculator.iml
+src/
