@@ -2,9 +2,12 @@ package by.home.service;
 
 import by.home.storage.HistoryStorage;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+import java.util.ArrayList;
+import java.util.List;
+
+@Service
 public class CalcService {
 
     @Autowired
@@ -62,5 +65,13 @@ public class CalcService {
 
     private double mul(double num1, double num2 ){
         return num1*num2;
+    }
+
+    public List<String> getHistory() {
+        return new ArrayList<>(storage.getHistory());
+    }
+
+    public void clearHistory() {
+        storage.clearHistory();
     }
 }

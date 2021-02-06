@@ -1,5 +1,6 @@
 package by.home.storage;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -14,5 +15,8 @@ public class HistoryStorage {
     }
     public void addToHistory(String operation){
         history.add(operation);
+    }
+    public void clearHistory() {
+        history.clear();
     }
 }
