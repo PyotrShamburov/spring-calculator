@@ -1,11 +1,29 @@
 package by.home.entity;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
 public class User {
     private int id;
+
+    @NotBlank
+    @Size(min = 3, max = 15)
+    @Pattern(regexp = "^(?=.*[a-zA-Z])(?=.\\S+$)(.{3,})$",
+            message = "Wrong name format! Only characters must be here!")
     private String name;
+
+    @NotBlank
+    @Size(min = 3, max = 15)
+    @Pattern(regexp = "\\w+",
+            message = "Wrong login format! Only characters and digits must be here!")
     private String login;
+
+    @NotBlank
+    @Size(min = 3, max = 15)
+    @Pattern(regexp = "\\w+",
+            message = "Wrong password format! Only characters and digits must be here!")
     private String password;
 
     public User() {

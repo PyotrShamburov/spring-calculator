@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -20,14 +21,23 @@
     <div class="col-md-3" style="width: 15%">
         <label class="form-label">Number 1: </label>
         <input type="number" class="form-control" name="num1">
+        <br>
+        <p style="color: red">${num1}</p>
+        <br>
     </div>
     <div class="col-md-3" style="width: 15%">
         <label class="form-label" >Number 2: </label>
         <input type="number" class="form-control" name="num2">
+        <br>
+        <p style="color: red">${num2}</p>
+        <br>
     </div>
     <div class="col-md-3" style="width: 15%">
         <label class="form-label" >Operation: </label>
         <input type="text" class="form-control" name="operator">
+        <br>
+        <p style="color: red">${operator}</p>
+        <br>
     </div>
     <div class="col-12">
         <button class="btn btn-primary" type="submit">Calculate</button>

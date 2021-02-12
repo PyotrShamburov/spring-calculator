@@ -1,8 +1,17 @@
 package by.home.entity;
 
+import javax.validation.constraints.*;
+
 public class Operation {
+
+    //@Pattern(regexp = "^(\\d+\\.\\d+)|(\\d+)$",  message = "Number must consists from digits only!")
     private double num1;
+
+    //@Pattern(regexp = "^(\\d+\\.\\d+)|(\\d+)$", message = "Number must consists from digits only!")
     private double num2;
+
+    @NotBlank
+    @Pattern(regexp = "^([a-z]{3})$",  message = "Only characters put here!")
     private String operator;
     private String result;
 

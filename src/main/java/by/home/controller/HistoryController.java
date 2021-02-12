@@ -9,17 +9,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpSession;
-import java.util.List;
+
 
 @Controller
-@RequestMapping(path = "/")
+@RequestMapping(path = "/calc/history")
 public class HistoryController {
     @Autowired
     private CalcService calcService;
 
-    @GetMapping(path = "/calc/history")
-    public ModelAndView showOperations(HttpSession httpSession, ModelAndView modelAndView){
+    @GetMapping
+    public ModelAndView showOperations(ModelAndView modelAndView){
         modelAndView.setViewName("history");
         modelAndView.addObject("list",calcService.getHistory());
         return modelAndView;
