@@ -12,10 +12,10 @@
             <a class="nav-link" style="font-size: medium" href="/">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" style="font-size: medium" href="/reg">Registration</a>
+            <a class="nav-link" style="font-size: medium" href="/user/reg">Registration</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" style="font-size: medium" href="/auth">Authorization</a>
+            <a class="nav-link" style="font-size: medium" href="/user/auth">Authorization</a>
         </li>
     </ul>
 </c:if>
@@ -31,7 +31,7 @@
             <a class="nav-link" style="font-size: medium" href="/calc/history">History</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" style="font-size: medium" href="/out">LogOut</a>
+            <a class="nav-link" style="font-size: medium" href="/user/out">LogOut</a>
         </li>
     </ul>
 </c:if>
