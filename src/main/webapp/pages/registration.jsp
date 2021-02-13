@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <title>Registration</title>
@@ -6,33 +7,30 @@
 <body>
 <jsp:include page="_header.jsp"/>
 <div class="container" style="text-align: -webkit-center">
-    <form novalidate action="/user/reg" method="post" >
-        <div class="mb-3" style="width: 25%">
-            <label class="form-label">Name: </label>
-            <input type="text" class="form-control" name="name">
-            <br>
-            <p style="color: red">${name}</p>
-            <br>
-        </div>
-        <div class="mb-3" style="width: 25%">
-            <label class="form-label" >Login: </label>
-            <input type="text" class="form-control" name="login">
-            <br>
-            <p style="color: red">${login}</p>
-            <br>
-        </div>
-        <div class="mb-3" style="width: 25%">
-            <label class="form-label" >Password: </label>
-            <input type="password" class="form-control" name="password">
-            <br>
-            <p style="color: red">${password}</p>
-            <br>
-        </div>
-        <div class="col-12">
-            <button class="btn btn-primary" type="submit">Register</button>
-        </div>
-        <label style="color: red">${answer}</label>
-    </form>
+    <sf:form modelAttribute="newUser" action="/user/reg" method="post">
+        <label class="form-label">Name: </label>
+        <br>
+        <sf:input path="name"/>
+        <br>
+        <sf:errors path="name" cssStyle="color: red"/>
+        <br>
+
+        <label class="form-label" >Login: </label>
+        <br>
+        <sf:input path="login" />
+        <br>
+        <sf:errors path="login" cssStyle="color: red"/>
+        <br>
+
+        <label class="form-label" >Password: </label>
+        <br>
+        <sf:input path="password" cssClass="password-field"/>
+        <br>
+        <sf:errors path="password" cssStyle="color: red"/>
+        <br>
+        <sf:button>Register!</sf:button>
+    </sf:form>
+    <label style="color: red">${answer}</label>
 </div>
 </body>
 </html>

@@ -1,6 +1,7 @@
 package by.home.storage;
 
 import by.home.entity.User;
+import by.home.entity.exception.UserNotFoundException;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -25,6 +26,6 @@ public class UserStorage {
                 return user;
             }
         }
-        return null;
+        throw new UserNotFoundException("User with login doesn't exists!");
     }
 }

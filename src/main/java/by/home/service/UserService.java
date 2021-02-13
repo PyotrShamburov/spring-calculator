@@ -1,6 +1,7 @@
 package by.home.service;
 
 import by.home.entity.User;
+import by.home.entity.exception.UserAlreadyExistsException;
 import by.home.storage.UserStorage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,7 +17,7 @@ public class UserService {
             userStorage.save(user);
             return true;
         }
-        return false;
+        throw new UserAlreadyExistsException("User with this login already exists!");
     }
     public User checkByLogin(String login) {
         return userStorage.getByLogin(login);
